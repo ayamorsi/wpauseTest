@@ -3,7 +3,19 @@ pipline {
     stages {
         stage('Droplet') {
             steps{
-                sh 'ls'
-            }
+                withCredentials([usernamePassword(credentialsId: 'docker_id', passwordVariable: 'ipadress', usernameVariable: 'name')]) {
+                sh 'ssh name@ipadress'
+                }
+     post {
+           success{
+               echo "======== test success========"
+        }
+           failure{
+               echo "======== test failed========"
+        }
+     }          
+    
+                
+        }
     }
 }

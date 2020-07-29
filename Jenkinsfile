@@ -3,9 +3,9 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-               withCredentials([usernamePassword(credentialsId: 'docker_id', passwordVariable: 'ipadress', usernameVariable: 'name')]) {
-                sh 'ssh name@ipadress'
-                }
+               withCredentials([string(credentialsId: 'ipadress', variable: 'ipadress')]) {
+               sh 'ssh aya@$ipadress'
+}
             }
         post {
            success{

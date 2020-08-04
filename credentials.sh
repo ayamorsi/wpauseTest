@@ -14,7 +14,7 @@ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 apt-get install nodejs -y
 
 #angular
-npm install -g @angular/cli -y
+npm install -gy @angular/cli 
 
 #git
 apt-get install git-core git-gui git-doc -y
@@ -22,7 +22,7 @@ git config --global user.name "$1"
 git config --global user.email "$2"
 
 #typescript
-npm install -g typescript@latest -y
+npm install -gy typescript@latest 
 
 #zip
 apt-get install zip unzip -qy

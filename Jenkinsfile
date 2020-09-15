@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-               sshagent(['ssh-key']) {
+               sshagent(['ec2-user']) {
                //sh 'scp credentials.sh root@164.90.180.161:/home'
                sh 'cd /home'
               //sh 'bash credentials.sh ayamorsi aya.morsi163@gmail.com'
